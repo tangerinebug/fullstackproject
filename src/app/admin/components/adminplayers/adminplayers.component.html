@@ -1,3 +1,12 @@
 <p>
   adminplayers works!
 </p>
+<mat-button-toggle-group>
+  <mat-button-toggle routerLink="/adminplayers">Players</mat-button-toggle>
+  <mat-button-toggle routerLink="/admingames">Games</mat-button-toggle>
+</mat-button-toggle-group>
+<router-outlet></router-outlet>
+
+<div align="right" style="padding-right:10px">
+  <a mat-button routerLink="/admincreate">Add Player</a>
+</div> 

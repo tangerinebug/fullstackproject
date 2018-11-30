@@ -14,7 +14,7 @@ const routes: Routes = [
         children: [
           { path:'games', component: GamesComponent },
           { path:'players', component: PlayersComponent },
-          { path: '', component: UserComponent }
+          { path: '', component: PlayersComponent }
         ]
       }
     ]

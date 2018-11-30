@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AdmingamesComponent } from './components/admingames/admingames.component';
 import { AdminplayersComponent } from './components/adminplayers/adminplayers.component';
+import { AddComponent } from './components/add/add.component';
+import { EditComponent } from './components/edit/edit.component';
 
 const routes: Routes = [
   {
@@ -12,9 +14,11 @@ const routes: Routes = [
       {
         path: '',
         children: [
+          { path:'admincreate', component: AddComponent },
+          { path:'adminedit/:id', component: EditComponent },
           { path:'admingames', component: AdmingamesComponent },
           { path:'adminplayers', component: AdminplayersComponent },
-          { path: '', component: AdminComponent }
+          { path:'', component: AdminplayersComponent }
         ]
       }
     ]
