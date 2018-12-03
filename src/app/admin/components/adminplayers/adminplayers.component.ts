@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayersService } from '../../../players.service';
 
 @Component({
   selector: 'app-adminplayers',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminplayersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private playersService: PlayersService) { }
 
   ngOnInit() {
+    this.playersService.getPlayers().subscribe((player) => {
+      console.log(player);
+    });
   }
 
 }
