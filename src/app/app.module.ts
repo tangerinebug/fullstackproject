@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatButtonModule } from '@angular/material/button';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,7 @@ import { EditComponent } from './admin/components/edit/edit.component';
 import { AddComponent } from './admin/components/add/add.component';
 import { AdminplayersComponent } from './admin/components/adminplayers/adminplayers.component';
 import { AdmingamesComponent } from './admin/components/admingames/admingames.component';
+import { PlayersService } from './players.service'
 
 @NgModule({
   declarations: [
@@ -41,9 +44,12 @@ import { AdmingamesComponent } from './admin/components/admingames/admingames.co
     MatButtonModule,
     MatButtonToggleModule,
     UserRoutingModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PlayersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
